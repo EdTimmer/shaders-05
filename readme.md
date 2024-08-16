@@ -1,4 +1,4 @@
-# Three.js Project - Shaders 2
+# Three.js Project - Shaders 5
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).

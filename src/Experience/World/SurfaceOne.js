@@ -7,7 +7,7 @@ export default class SurfaceOne {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
-    this.camera = this.experience.camera.instance;
+    // this.camera = this.experience.camera.instance;
     this.mouse = new THREE.Vector2();
     this.raycaster = new THREE.Raycaster();
 

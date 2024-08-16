@@ -33,7 +33,9 @@ export default class SurfaceThree {
   setGeometry() {
     // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
     // this.geometry = new THREE.SphereGeometry(26, 32, 32);
-    this.geometry = new THREE.BoxGeometry(50, 50, 50, 32, 32, 32);
+    // this.geometry = new THREE.BoxGeometry(50, 50, 50, 32, 32, 32);
+    this.geometry = new THREE.CylinderGeometry(26, 26, 50, 32);
+    // this.geometry = new THREE.IcosahedronGeometry(26, 0);
     // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
 

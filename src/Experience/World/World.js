@@ -24,20 +24,34 @@ export default class World {
       this.debugFolder = this.debug.ui.addFolder('world')
     }
 
+    // if (this.camera) {
+    //   this.camera.instance.rotateOnAxis(new THREE.Vector3(0, 1, 0), Math.PI / 2)
+    // }
+
+
+
     // Wait for resources
     this.resources.on('ready', () => {
       // Setup
-      this.surfaceOne = new SurfaceOne();
-      this.surfaceTwo = new SurfaceTwo();
-      this.surfaceThree = new SurfaceThree();
+      // this.surfaceOne = new SurfaceOne();
+      // this.surfaceTwo = new SurfaceTwo();
+      // this.surfaceThree = new SurfaceThree();
       this.surfaceFour = new SurfaceFour();
       this.surfaceFive = new SurfaceFive();
-      this.surfaceSix = new SurfaceSix();
+      // this.surfaceSix = new SurfaceSix();
 
       this.environment = new Environment()
            
+      // Make camera look at the center of surfaceFour
+      // this.camera.instance.lookAt(this.surfaceFive.mesh.position)
+      // this.camera.instance.rotation.z = Math.PI / 3;
+
+
+
       // Pass engineGroup to the camera
-      this.camera.setTarget(this.surfaceOne.mesh)
+      // this.camera.setTarget(-150, 0, 0)
+      // this.camera.instance.rotateY(Math.PI * 1.5)
+      // this.camera.instance.rotateY(Math.PI * 1.5)
     })
   }
 
@@ -45,23 +59,24 @@ export default class World {
     if (this.camera) {
       this.camera.update()
     }
-    if (this.surfaceOne) { 
-      this.surfaceOne.update()
-    }
-    if (this.surfaceTwo) {
-      this.surfaceTwo.update()
-    }
-    if (this.surfaceThree) {
-      this.surfaceThree.update()
-    }
+
+    // if (this.surfaceOne) { 
+    //   this.surfaceOne.update()
+    // }
+    // if (this.surfaceTwo) {
+    //   this.surfaceTwo.update()
+    // }
+    // if (this.surfaceThree) {
+    //   this.surfaceThree.update()
+    // }
     if (this.surfaceFour) {
       this.surfaceFour.update()
     }
     if (this.surfaceFive) {
       this.surfaceFive.update()
     }
-    if (this.surfaceSix) {
-      this.surfaceSix.update()
-    }
+    // if (this.surfaceSix) {
+    //   this.surfaceSix.update()
+    // }
   }
 }
