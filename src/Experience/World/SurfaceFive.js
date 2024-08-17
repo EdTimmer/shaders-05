@@ -32,7 +32,7 @@ export default class SurfaceFive {
 
   setGeometry() {
     // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
-    this.geometry = new THREE.SphereGeometry(30, 32, 32);
+    this.geometry = new THREE.SphereGeometry(40, 32, 32);
     // this.geometry = new THREE.BoxGeometry(50, 50, 50, 32, 32, 32);
     // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
@@ -50,9 +50,10 @@ export default class SurfaceFive {
 
   update() {    
     this.material.uniforms.u_Time.value = this.experience.time.getElapsedTime().toFixed(2);
-
-    this.mesh.rotation.y += 0.001;
-
+    this.mesh.rotation.y -= 0.001;
+    // this.mesh.rotation.z -= 0.001;
+    // this.mesh.rotation.x += 0.001;
+    // this.mesh.rotation.y -= 0.001;
     // this.mesh.position.z = Math.sin(this.experience.time.elapsed * (-0.00005)) * 150;
     // this.mesh.position.x = 150 + Math.cos(this.experience.time.elapsed * (-0.00005)) * 150;
     // this.mesh.postion.z += Math.sin(this.experience.time.elapsed * (-0.0005)) * 150;
