@@ -14,15 +14,15 @@ vec3 palette(float t) {
     // vec3 b = vec3(0.0, 1.0, 0.5); 
     // vec3 c = vec3(1.0, 1.0, 1.0);
 // black and white
-    // vec3 a = vec3(0.5, 0.5, 0.5);
-    // vec3 b = vec3(0.5, 0.5, 0.5); 
-    // vec3 c = vec3(1.0, 1.0, 1.0);
-
-    vec3 a = vec3(0.0, 0.5, 0.5);
+    vec3 a = vec3(0.5, 0.5, 0.5);
     vec3 b = vec3(0.5, 0.5, 0.5); 
-    vec3 c = vec3(0.5, 0.5, 0.0);
-    // vec3 d = vec3(0.263, 0.416, 0.557);
+    vec3 c = vec3(1.0, 1.0, 1.0);
+
+    // vec3 a = vec3(0.0, 0.1, 0.6);
+    // vec3 b = vec3(0.5, 0.5, 0.4); 
+    // vec3 c = vec3(0.5, 0.6, 0.4);
     vec3 d = vec3(1.0);
+    // vec3 d = vec3(0.263, 0.416, 0.557);
     return a + b * cos(6.28318 * (c * t + d));
 }
 
@@ -76,5 +76,5 @@ void main() {
         finalColor += col * d;
     }
 
-    gl_FragColor = vec4(finalColor, 0.2);
+    gl_FragColor = vec4(finalColor, 0.1);
 }

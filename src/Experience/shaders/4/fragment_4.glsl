@@ -10,10 +10,24 @@ varying vec2 vUv0;
 // }
 
 vec3 palette(float t) {
+    // black and white
     vec3 a = vec3(0.5, 0.5, 0.5);
     vec3 b = vec3(0.5, 0.5, 0.5); 
     vec3 c = vec3(1.0, 1.0, 1.0);
     vec3 d = vec3(1.0);
+
+    // color purple
+    // vec3 a = vec3(0.4, 0.4, 0.6);
+    // vec3 b = vec3(0.4, 0.4, 0.8); 
+    // vec3 c = vec3(1.0, 1.0, 1.0);
+    // vec3 d = vec3(1.0);
+
+    // color yellow
+    // vec3 a = vec3(0.9, 0.9, 0.6);
+    // vec3 b = vec3(0.8, 0.6, 0.8); 
+    // vec3 c = vec3(0.5, 0.5, 0.7);
+    // vec3 d = vec3(1.0);
+
     return a + b * cos(6.28318 * (c * t + d));
 }
 
@@ -78,5 +92,5 @@ void main() {
         finalColor += col * d;
     }
 
-    gl_FragColor = vec4(finalColor, 0.5);
+    gl_FragColor = vec4(finalColor, 0.2);
 }

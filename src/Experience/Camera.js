@@ -15,7 +15,7 @@ export default class Camera {
 
   setInstance() {
     this.instance = new THREE.PerspectiveCamera(75, this.sizes.width / this.sizes.height, 0.1, 1000);
-    this.instance.position.set(0, -30, 0);
+    this.instance.position.set(0, -28, 0);
     this.scene.add(this.instance);
 
     // this.instance.rotation.set(0, Math.PI * 0.5, 0);
