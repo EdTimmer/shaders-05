@@ -58,7 +58,7 @@ export default class SurfaceOne {
 
     this.mesh.rotation.y -= 0.005;
     this.mesh.rotation.x += 0.001;
-    this.mesh.position.y = -12 + Math.sin(this.experience.time.elapsed * (-0.00015)) * 5;
+    this.mesh.position.y = -16 + Math.sin(this.experience.time.elapsed * (-0.00015)) * 10;
     // this.mesh.rotation.x += 0.005;
   }
 }
