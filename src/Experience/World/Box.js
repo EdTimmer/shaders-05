@@ -1,9 +1,9 @@
 import * as THREE from 'three'
 import Experience from '../Experience'
-import vertexShader from '../shaders/5/vertex_5.glsl'
-import fragmentShader from '../shaders/5/fragment_5.glsl'
+import vertexShader from '../shaders/box/vertex_box.glsl'
+import fragmentShader from '../shaders/box/fragment_box.glsl'
 
-export default class SurfaceFive {
+export default class Box {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
@@ -32,16 +32,15 @@ export default class SurfaceFive {
 
   setGeometry() {
     // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
-    this.geometry = new THREE.SphereGeometry(40, 32, 32);
-    // this.geometry = new THREE.BoxGeometry(50, 50, 50, 32, 32, 32);
+    // this.geometry = new THREE.SphereGeometry(26, 32, 32);
+    this.geometry = new THREE.BoxGeometry(130, 130, 90, 32, 32, 32);
+    // this.geometry = new THREE.CylinderGeometry(56, 56, 150, 32);
     // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
 
   setMesh() {
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.mesh.position.set(0, 0, 0);
-    this.mesh.rotation.set(Math.PI * 0.5, Math.PI * 0.5, 0);
-
 
     this.meshPosition = this.mesh.position;
     this.meshQuaternion = this.mesh.quaternion;
@@ -50,13 +49,6 @@ export default class SurfaceFive {
 
   update() {    
     this.material.uniforms.u_Time.value = this.experience.time.getElapsedTime().toFixed(2);
-    this.mesh.rotation.y -= 0.001;
-    // this.mesh.rotation.z -= 0.001;
-    // this.mesh.rotation.x += 0.001;
-    // this.mesh.rotation.y -= 0.001;
-    // this.mesh.position.z = Math.sin(this.experience.time.elapsed * (-0.00005)) * 150;
-    // this.mesh.position.x = 150 + Math.cos(this.experience.time.elapsed * (-0.00005)) * 150;
-    // this.mesh.postion.z += Math.sin(this.experience.time.elapsed * (-0.0005)) * 150;
-    // this.mesh.postion.x += Math.cos(this.experience.time.elapsed * (-0.0005)) * 150;
+    this.mesh.rotation.z -= 0.001;
   }
 }

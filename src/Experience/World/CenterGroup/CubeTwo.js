@@ -1,15 +1,12 @@
 import * as THREE from 'three'
 import Experience from '../../Experience'
-import vertexShader from '../../shaders/1/vertex_1.glsl'
-import fragmentShader from '../../shaders/1/fragment_1.glsl'
+import vertexShader from '../../shaders/cube/vertex_cube.glsl'
+import fragmentShader from '../../shaders/cube/fragment_cube.glsl'
 
-export default class SurfaceTwo {
+export default class CubeTwo {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
-    // this.camera = this.experience.camera.instance;
-    this.mouse = new THREE.Vector2();
-    this.raycaster = new THREE.Raycaster();
 
     this.setMaterial()
     this.setGeometry()
@@ -31,12 +28,7 @@ export default class SurfaceTwo {
   }
 
   setGeometry() {
-    // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
-    // this.geometry = new THREE.SphereGeometry(26, 32, 32);
-    // this.geometry = new THREE.BoxGeometry(50, 50, 50, 32, 32, 32);
     this.geometry = new THREE.BoxGeometry(8, 8, 8, 32, 32, 32);
-    // this.geometry = new THREE.CylinderGeometry(6, 6, 38, 32);
-    // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
 
   setMesh() {
@@ -51,7 +43,6 @@ export default class SurfaceTwo {
   getMesh() {
 
     return this.mesh;
-    // this.scene.add(this.mesh);
   } 
 
   update() {    

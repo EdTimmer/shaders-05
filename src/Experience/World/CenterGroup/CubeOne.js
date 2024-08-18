@@ -1,15 +1,12 @@
 import * as THREE from 'three'
 import Experience from '../../Experience'
-import vertexShader from '../../shaders/1/vertex_1.glsl'
-import fragmentShader from '../../shaders/1/fragment_1.glsl'
+import vertexShader from '../../shaders/cube/vertex_cube.glsl'
+import fragmentShader from '../../shaders/cube/fragment_cube.glsl'
 
-export default class SurfaceOne {
+export default class CubeOne {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
-    // this.camera = this.experience.camera.instance;
-    this.mouse = new THREE.Vector2();
-    this.raycaster = new THREE.Raycaster();
 
     this.setMaterial()
     this.setGeometry()
@@ -31,11 +28,7 @@ export default class SurfaceOne {
   }
 
   setGeometry() {
-    // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
-    // this.geometry = new THREE.SphereGeometry(4, 32, 32);
     this.geometry = new THREE.BoxGeometry(8, 8, 8, 32, 32, 32);
-    // this.geometry = new THREE.CylinderGeometry(6, 6, 38, 32);
-    // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
 
   setMesh() {
@@ -50,7 +43,6 @@ export default class SurfaceOne {
   getMesh() {
 
     return this.mesh;
-    // this.scene.add(this.mesh);
   } 
 
   update() {    
@@ -59,6 +51,5 @@ export default class SurfaceOne {
     this.mesh.rotation.y -= 0.005;
     this.mesh.rotation.x += 0.001;
     this.mesh.position.y = -16 + Math.sin(this.experience.time.elapsed * (-0.00015)) * 10;
-    // this.mesh.rotation.x += 0.005;
   }
 }
